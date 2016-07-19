@@ -27,11 +27,15 @@ public class Correlation {
       JavaDoubleRDD seriesY = sc.parallelizeDoubles(series2);
       Double correlation = Statistics.corr(seriesX.srdd(), seriesY.srdd(), "pearson");
 
+      System.out.println("------------------------------Correlation Result------------------------------");
+      System.out.println();
       System.out.println("Series X:" + series1);
       System.out.println("Series Y:" + series2);
       System.out.println("Pearson correlation result:" + correlation);
-      sc.close();
+      System.out.println();
+      System.out.println("------------------------------------------------------------------------------");
 
+      sc.close();
     } catch (Exception ex){
       System.out.println(ex);
     }
